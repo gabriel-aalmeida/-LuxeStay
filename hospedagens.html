@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospedagens | LuxeStay</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="container">
+            <a href="index.html" class="logo">
+                Luxe<span>Stay</span>
+            </a>
+
+            <nav class="menu" aria-label="Menu principal">
+                <a href="index.html">Início</a>
+                <a href="hospedagens.html">Hospedagens</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+
+            <a href="login.html" class="botao-login">Entrar</a>
+        </div>
+    </header>
+
+    <main class="pagina-hospedagens container">
+
+        <div class="titulo-resultados">
+            <p class="etiqueta-secao">DESCUBRA BRASÍLIA</p>
+            <h1>Hospedagens para sua próxima viagem</h1>
+            <p id="resumo-busca">
+                Explore hotéis selecionados em Brasília.
+            </p>
+        </div>
+
+        <div class="filtros-hospedagens">
+            <label for="filtro-tipo">Categoria:</label>
+            <select id="filtro-tipo">
+                <option value="todos">Todas as categorias</option>
+                <option value="Luxo">Luxo</option>
+                <option value="Arquitetura">Arquitetura e charme</option>
+                <option value="Executivo">Executivo</option>
+            </select>
+        </div>
+
+        <p id="quantidade-resultados" aria-live="polite"></p>
+
+        <section
+            class="grade-hospedagens"
+            id="lista-hospedagens"
+            aria-label="Resultados da pesquisa">
+        </section>
+
+        <p class="aviso-demonstrativo">
+            Projeto acadêmico demonstrativo. Preços e reservas
+            são simulados. Imagens provisórias ilustrativas.
+        </p>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
