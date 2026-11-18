@@ -1,37 +1,145 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>LuxeStay | Sua próxima experiência começa aqui</title>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
+    <!-- CABEÇALHO DO SITE -->
     <header class="cabecalho">
         <div class="container">
-            <a href="index.html" class="logo">Luxe<span>Stay</span></a>
 
-            <nav class="menu">
+            <a href="index.html" class="logo">
+                Luxe<span>Stay</span>
+            </a>
+
+            <nav class="menu" aria-label="Menu principal">
                 <a href="index.html">Início</a>
                 <a href="hospedagens.html">Hospedagens</a>
                 <a href="contato.html">Contato</a>
             </nav>
 
-            <a href="login.html" class="botao-login">Entrar</a>
+            <a href="login.html" class="botao-login">
+                Entrar
+            </a>
+
         </div>
     </header>
 
+    <!-- CONTEÚDO PRINCIPAL -->
     <main>
+
+        <!-- BANNER PRINCIPAL -->
         <section class="hero">
             <div class="hero-conteudo">
-                <p class="destaque">DESCUBRA SEU PRÓXIMO DESTINO</p>
-                <h1>Sua próxima experiência começa aqui.</h1>
-                <p>Encontre hotéis, pousadas e resorts para momentos inesquecíveis.</p>
-                <a href="hospedagens.html" class="botao-principal">Explorar hospedagens</a>
+
+                <p class="destaque">
+                    DESCUBRA SEU PRÓXIMO DESTINO
+                </p>
+
+                <h1>
+                    Sua próxima experiência começa aqui.
+                </h1>
+
+                <p>
+                    Encontre hotéis, pousadas e resorts
+                    para momentos inesquecíveis.
+                </p>
+
+                <a href="hospedagens.html" class="botao-principal">
+                    Explorar hospedagens
+                </a>
+
             </div>
         </section>
+
+        <!-- PESQUISA DE HOSPEDAGENS -->
+        <section class="secao-busca" id="buscar">
+            <div class="container">
+
+                <h2>Encontre sua hospedagem ideal</h2>
+
+                <p>
+                    Escolha seu destino e planeje
+                    sua próxima viagem.
+                </p>
+
+                <form
+                    class="formulario-busca"
+                    action="hospedagens.html"
+                    method="get"
+                >
+
+                    <!-- DESTINO -->
+                    <div class="campo-busca">
+                        <label for="destino">Destino</label>
+
+                        <input
+                            type="text"
+                            id="destino"
+                            name="destino"
+                            placeholder="Ex.: Brasília, DF"
+                            required
+                        >
+                    </div>
+
+                    <!-- CHECK-IN -->
+                    <div class="campo-busca">
+                        <label for="checkin">Check-in</label>
+
+                        <input
+                            type="date"
+                            id="checkin"
+                            name="checkin"
+                            required
+                        >
+                    </div>
+
+                    <!-- CHECK-OUT -->
+                    <div class="campo-busca">
+                        <label for="checkout">Check-out</label>
+
+                        <input
+                            type="date"
+                            id="checkout"
+                            name="checkout"
+                            required
+                        >
+                    </div>
+
+                    <!-- QUANTIDADE DE HÓSPEDES -->
+                    <div class="campo-busca">
+                        <label for="hospedes">Hóspedes</label>
+
+                        <input
+                            type="number"
+                            id="hospedes"
+                            name="hospedes"
+                            min="1"
+                            max="10"
+                            value="2"
+                            required
+                        >
+                    </div>
+
+                    <!-- BOTÃO DE PESQUISA -->
+                    <button type="submit" class="botao-buscar">
+                        Buscar hospedagens
+                    </button>
+
+                </form>
+
+            </div>
+        </section>
+
     </main>
 
 </body>
