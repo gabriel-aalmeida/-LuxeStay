@@ -80,7 +80,21 @@ body {
     justify-content: center;
     padding: 80px 24px;
     text-align: center;
-    background: linear-gradient(135deg, #172B3A, #304D60);
+
+    background-image:
+    linear-gradient(
+        90deg,
+        rgba(9, 25, 44, 0.76) 0%,
+        rgba(9, 25, 44, 0.44) 55%,
+        rgba(9, 25, 44, 0.20) 100%
+    ),
+    url("../images/banner-praia.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
     color: var(--branco);
 }
 
@@ -463,6 +477,383 @@ body {
     }
 
     .card-hospedagem:hover .card-imagem img {
+        transform: none;
+    }
+}
+
+/* ===== BLACK FRIDAY LUXESTAY ===== */
+
+.secao-promocoes {
+    padding: 75px 0;
+    background: #FFFFFF;
+}
+
+.promocoes-titulo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.etiqueta-promocao {
+    color: #87642C;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.promocoes-titulo h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    margin-bottom: 12px;
+}
+
+.promocoes-titulo > p:last-child {
+    color: #555D63;
+}
+
+.carrossel {
+    position: relative;
+    height: 420px;
+    border-radius: 18px;
+    overflow: hidden;
+    background: var(--azul);
+}
+
+.slides-promocoes,
+.slide-promocao {
+    position: absolute;
+    inset: 0;
+}
+
+.slide-promocao {
+    display: flex;
+    align-items: center;
+    padding: 50px 90px;
+   
+    background-position: center 45%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    isolation: isolate;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s;
+}
+
+.slide-promocao.ativo {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+.slide-conteudo {
+    max-width: 560px;
+    color: white;
+}
+
+.selo-desconto {
+    display: inline-block;
+    background: var(--dourado);
+    color: var(--azul);
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.slide-conteudo h3 {
+    font-size: clamp(28px, 4vw, 46px);
+    margin-bottom: 16px;
+}
+
+.slide-conteudo p {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.slide-conteudo a {
+    display: inline-block;
+    background: white;
+    color: var(--azul);
+    padding: 14px 24px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.carrossel-seta {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--azul);
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.anterior {
+    left: 18px;
+}
+
+.proximo {
+    right: 18px;
+}
+
+.carrossel-indicadores {
+    position: absolute;
+    z-index: 3;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.indicador {
+    width: 12px;
+    height: 12px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.indicador.ativo {
+    background: white;
+}
+
+.promocoes-aviso {
+    text-align: center;
+    margin-top: 18px;
+    color: #555D63;
+    font-size: 12px;
+}
+
+.carrossel button:focus-visible,
+.slide-conteudo a:focus-visible {
+    outline: 3px solid #D5B98C;
+    outline-offset: 3px;
+}
+
+@media (max-width: 650px) {
+    .carrossel {
+        height: 460px;
+    }
+
+    .slide-promocao {
+        padding: 55px 55px;
+    }
+
+    .slide-conteudo p {
+        font-size: 15px;
+    }
+
+    .carrossel-seta {
+        width: 32px;
+        height: 32px;
+    }
+
+    .anterior {
+        left: 8px;
+    }
+
+    .proximo {
+        right: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slide-promocao {
+        transition: none;
+    }
+}
+.hero-conteudo {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1,
+.hero p {
+    color: #FFFFFF;
+}
+
+/* ===== CARROSSEL PREMIUM: FOTO + DEGRADÊ ===== */
+
+.slide-promocao {
+    padding: 50px 90px;
+}
+
+.slide-promocao::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(8, 22, 35, .84) 0%, rgba(8, 22, 35, .55) 42%, rgba(8, 22, 35, .08) 100%);
+    pointer-events: none;
+}
+
+.slide-conteudo {
+    position: relative;
+    z-index: 1;
+    max-width: 530px;
+    text-align: left;
+}
+
+.slide-conteudo h3, .slide-conteudo p {
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0,0,0,.3);
+}
+
+/* ===== CARDS DE OFERTAS BLACK FRIDAY ===== */
+.ofertas-adicionais {
+    margin-top: 60px;
+}
+
+.ofertas-cabecalho {
+    margin-bottom: 28px;
+}
+
+.ofertas-cabecalho h2 {
+    font-size: clamp(24px, 3vw, 32px);
+    margin-bottom: 10px;
+}
+
+.ofertas-cabecalho p {
+    color: #555D63;
+    line-height: 1.6;
+}
+
+.grade-ofertas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.card-oferta {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(0,0,0,.08);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.card-oferta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(0,0,0,.12);
+}
+
+.card-oferta img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.oferta-conteudo {
+    padding: 24px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.oferta-desconto {
+    display: inline-block;
+    background: var(--azul);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.oferta-conteudo h3 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin-bottom: 10px;
+}
+
+.oferta-conteudo > p {
+    color: #555D63;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.oferta-preco {
+    margin-top: auto;
+}
+
+.oferta-preco strong {
+    display: block;
+    font-size: 26px;
+    color: var(--azul);
+    margin-top: 6px;
+}
+
+.oferta-conteudo a {
+    display: block;
+    width: 100%;
+    margin-top: 16px;
+    padding: 14px;
+    background: var(--azul);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+.oferta-conteudo a:hover {
+    background: #304D60;
+}
+
+.oferta-conteudo a:focus-visible {
+    outline: 3px solid var(--dourado);
+    outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+    .grade-ofertas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .slide-promocao {
+        padding: 50px 50px;
+        background-position: center;
+    }
+
+    .slide-conteudo h3 {
+        font-size: 29px;
+    }
+}
+
+@media (max-width: 600px) {
+    .grade-ofertas {
+        grid-template-columns: 1fr;
+    }
+
+    .ofertas-adicionais {
+        margin-top: 42px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card-oferta {
+        transition: none;
+    }
+
+    .card-oferta:hover {
         transform: none;
     }
 }

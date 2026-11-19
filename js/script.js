@@ -188,3 +188,94 @@ if (listaHospedagens) {
     filtroTipo.addEventListener("change", mostrarHospedagens);
     mostrarHospedagens();
 }
+
+/* ===== CARROSSEL BLACK FRIDAY ===== */
+
+const carrossel = document.getElementById("carrossel-promocoes");
+
+if (carrossel) {
+    const slides = Array.from(
+        carrossel.querySelectorAll(".slide-promocao")
+    );
+
+    const indicadores = Array.from(
+        carrossel.querySelectorAll(".indicador")
+    );
+
+    const botaoAnterior = carrossel.querySelector(".anterior");
+    const botaoProximo = carrossel.querySelector(".proximo");
+
+    let slideAtual = 0;
+    let intervalo;
+
+    function mostrarSlide(indice) {
+        slideAtual = (indice + slides.length) % slides.length;
+
+        slides.forEach((slide, i) => {
+            const ativo = i === slideAtual;
+
+            slide.classList.toggle("ativo", ativo);
+            slide.setAttribute("aria-hidden", String(!ativo));
+            slide.inert = !ativo;
+
+            indicadores[i].classList.toggle("ativo", ativo);
+            indicadores[i].setAttribute(
+                "aria-current", ativo ? "true" : "false"
+            );
+        });
+    }
+
+    function pararAutomatico() {
+        clearInterval(intervalo);
+    }
+
+    function iniciarAutomatico() {
+        pararAutomatico();
+
+        if (window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches) return;
+
+        intervalo = setInterval(() => {
+            mostrarSlide(slideAtual + 1);
+        }, 5000);
+    }
+
+    botaoProximo.addEventListener("click", () => {
+        mostrarSlide(slideAtual + 1);
+        iniciarAutomatico();
+    });
+
+    botaoAnterior.addEventListener("click", () => {
+        mostrarSlide(slideAtual - 1);
+        iniciarAutomatico();
+    });
+
+    indicadores.forEach((indicador, indice) => {
+        indicador.addEventListener("click", () => {
+            mostrarSlide(indice);
+            iniciarAutomatico();
+        });
+    });
+
+    carrossel.addEventListener("mouseenter", pararAutomatico);
+    carrossel.addEventListener("mouseleave", iniciarAutomatico);
+    carrossel.addEventListener("focusin", pararAutomatico);
+
+    carrossel.addEventListener("focusout", (evento) => {
+        if (!carrossel.contains(evento.relatedTarget)) {
+            iniciarAutomatico();
+        }
+    });
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+            pararAutomatico();
+        } else {
+            iniciarAutomatico();
+        }
+    });
+
+    mostrarSlide(0);
+    iniciarAutomatico();
+}

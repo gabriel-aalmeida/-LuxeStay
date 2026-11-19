@@ -1,146 +1,671 @@
 
+
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
+
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 
     <title>LuxeStay | Sua próxima experiência começa aqui</title>
 
+
+
     <link rel="stylesheet" href="css/style.css">
+
 </head>
+
+
 
 <body>
 
-    <!-- CABEÇALHO DO SITE -->
+
+
+    <!-- CABEÇALHO -->
+
     <header class="cabecalho">
+
         <div class="container">
 
+
+
             <a href="index.html" class="logo">
+
                 Luxe<span>Stay</span>
+
             </a>
+
+
 
             <nav class="menu" aria-label="Menu principal">
+
                 <a href="index.html">Início</a>
+
                 <a href="hospedagens.html">Hospedagens</a>
+
                 <a href="contato.html">Contato</a>
+
             </nav>
 
+
+
             <a href="login.html" class="botao-login">
+
                 Entrar
+
             </a>
 
+
+
         </div>
+
     </header>
 
-    <!-- CONTEÚDO PRINCIPAL -->
+
+
     <main>
 
+
+
         <!-- BANNER PRINCIPAL -->
+
         <section class="hero">
+
             <div class="hero-conteudo">
 
+
+
                 <p class="destaque">
+
                     DESCUBRA SEU PRÓXIMO DESTINO
+
                 </p>
 
-                <h1>
-                    Sua próxima experiência começa aqui.
-                </h1>
+
+
+                <h1>Sua próxima experiência começa aqui.</h1>
+
+
 
                 <p>
+
                     Encontre hotéis, pousadas e resorts
+
                     para momentos inesquecíveis.
+
                 </p>
 
+
+
                 <a href="hospedagens.html" class="botao-principal">
+
                     Explorar hospedagens
+
                 </a>
 
+
+
             </div>
+
         </section>
 
+
+
         <!-- PESQUISA DE HOSPEDAGENS -->
+
         <section class="secao-busca" id="buscar">
+
             <div class="container">
+
+
 
                 <h2>Encontre sua hospedagem ideal</h2>
 
+
+
                 <p>
-                    Escolha seu destino e planeje
-                    sua próxima viagem.
+
+                    Escolha seu destino e planeje sua próxima viagem.
+
                 </p>
 
-                <form
-                    class="formulario-busca"
-                    action="hospedagens.html"
-                    method="get"
-                >
 
-                    <!-- DESTINO -->
+
+                <form class="formulario-busca"
+
+                      action="hospedagens.html"
+
+                      method="get">
+
+
+
                     <div class="campo-busca">
+
                         <label for="destino">Destino</label>
 
-                        <input
-                            type="text"
-                            id="destino"
-                            name="destino"
-                            placeholder="Ex.: Brasília, DF"
-                            required
-                        >
+                        <input type="text"
+
+                               id="destino"
+
+                               name="destino"
+
+                               placeholder="Ex.: Brasília, DF"
+
+                               required>
+
                     </div>
 
-                    <!-- CHECK-IN -->
+
+
                     <div class="campo-busca">
+
                         <label for="checkin">Check-in</label>
 
-                        <input
-                            type="date"
-                            id="checkin"
-                            name="checkin"
-                            required
-                        >
+                        <input type="date"
+
+                               id="checkin"
+
+                               name="checkin"
+
+                               required>
+
                     </div>
 
-                    <!-- CHECK-OUT -->
+
+
                     <div class="campo-busca">
+
                         <label for="checkout">Check-out</label>
 
-                        <input
-                            type="date"
-                            id="checkout"
-                            name="checkout"
-                            required
-                        >
+                        <input type="date"
+
+                               id="checkout"
+
+                               name="checkout"
+
+                               required>
+
                     </div>
 
-                    <!-- QUANTIDADE DE HÓSPEDES -->
+
+
                     <div class="campo-busca">
+
                         <label for="hospedes">Hóspedes</label>
 
-                        <input
-                            type="number"
-                            id="hospedes"
-                            name="hospedes"
-                            min="1"
-                            max="10"
-                            value="2"
-                            required
-                        >
+                        <input type="number"
+
+                               id="hospedes"
+
+                               name="hospedes"
+
+                               min="1"
+
+                               max="10"
+
+                               value="2"
+
+                               required>
+
                     </div>
 
-                    <!-- BOTÃO DE PESQUISA -->
+
+
                     <button type="submit" class="botao-buscar">
+
                         Buscar hospedagens
+
                     </button>
+
+
 
                 </form>
 
             </div>
+
         </section>
 
+
+
+        <!-- BLACK FRIDAY -->
+
+        <section class="secao-promocoes"
+
+                 aria-label="Promoções Black Friday">
+
+
+
+            <div class="container">
+
+
+
+                <div class="promocoes-titulo">
+
+                    <p class="etiqueta-promocao">OFERTAS ESPECIAIS</p>
+
+                    <h2>Black Friday LuxeStay</h2>
+
+                    <p>
+
+                        Descubra ofertas demonstrativas
+
+                        para sua próxima viagem.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- CARROSSEL -->
+
+                <div class="carrossel"
+
+                     id="carrossel-promocoes"
+
+                     aria-roledescription="carrossel">
+
+
+
+                    <div class="slides-promocoes">
+
+
+
+                        <!-- COPACABANA PALACE -->
+
+                        <article class="slide-promocao ativo"
+
+                             style="background-image: url('images/copacabana-palace.jpg');">
+
+
+
+                            <div class="slide-conteudo">
+
+                                <span class="selo-desconto">30% OFF*</span>
+
+
+
+                                <h3>Copacabana Palace</h3>
+
+
+
+                                <p>
+
+                                    Rio de Janeiro, RJ — Uma experiência
+
+                                    de luxo em frente à Praia de Copacabana.
+
+                                </p>
+
+
+
+                                <a href="hospedagens.html">
+
+                                    Explorar hospedagens
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- NANNAI MURO ALTO -->
+
+                        <article class="slide-promocao"
+
+                               style="background: url('images/nannai-muro-alto.jpg') center / cover no-repeat;"
+
+                                 aria-hidden="true">
+
+
+
+                            <div class="slide-conteudo">
+
+                                <span class="selo-desconto">25% OFF*</span>
+
+
+
+                                <h3>NANNAI Muro Alto</h3>
+
+
+
+                                <p>
+
+                                    Porto de Galinhas, PE — Bangalôs
+
+                                    sofisticados e piscinas em um
+
+                                    cenário paradisíaco.
+
+                                </p>
+
+
+
+                                <a href="hospedagens.html">
+
+                                    Explorar hospedagens
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- INFINITY BLUE -->
+
+                        <article class="slide-promocao"
+
+                               style="background-image: url('images/infinity-blue.jpg');"
+
+                                 aria-hidden="true">
+
+
+
+                            <div class="slide-conteudo">
+
+                                <span class="selo-desconto">20% OFF*</span>
+
+
+
+                                <h3>Infinity Blue Resort & Spa</h3>
+
+
+
+                                <p>
+
+                                    Balneário Camboriú, SC — Conforto,
+
+                                    piscinas e uma experiência à beira-mar.
+
+                                </p>
+
+
+
+                                <a href="hospedagens.html">
+
+                                    Explorar hospedagens
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+
+                    </div>
+
+
+
+                    <!-- CONTROLES DO CARROSSEL -->
+
+                    <button class="carrossel-seta anterior"
+
+                            type="button"
+
+                            aria-label="Promoção anterior">
+
+                        &#10094;
+
+                    </button>
+
+
+
+                    <button class="carrossel-seta proximo"
+
+                            type="button"
+
+                            aria-label="Próxima promoção">
+
+                        &#10095;
+
+                    </button>
+
+
+
+                    <div class="carrossel-indicadores"
+
+                         aria-label="Selecionar promoção">
+
+
+
+                        <button type="button"
+
+                                class="indicador ativo"
+
+                                aria-label="Mostrar promoção 1"></button>
+
+
+
+                        <button type="button"
+
+                                class="indicador"
+
+                                aria-label="Mostrar promoção 2"></button>
+
+
+
+                        <button type="button"
+
+                                class="indicador"
+
+                                aria-label="Mostrar promoção 3"></button>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <!-- CARDS DE OUTRAS OFERTAS -->
+
+                <div class="ofertas-adicionais">
+
+
+
+                    <div class="ofertas-cabecalho">
+
+                        <h2>Mais ofertas para você</h2>
+
+                        <p>
+
+                            Explore outras hospedagens
+
+                            selecionadas pelo LuxeStay.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="grade-ofertas">
+
+
+
+                        <!-- FAIRMONT -->
+
+                        <article class="card-oferta">
+
+                            <img src="images/fairmont-rio.jpg"
+
+                                 alt="Fairmont Rio de Janeiro"
+
+                                 loading="lazy">
+
+
+
+                            <div class="oferta-conteudo">
+
+                                <span class="oferta-desconto">15% OFF*</span>
+
+
+
+                                <h3>Fairmont Rio de Janeiro</h3>
+
+                                <p>Rio de Janeiro, RJ</p>
+
+
+
+                                <p class="oferta-preco">
+
+                                    Diárias ilustrativas a partir de
+
+                                    <strong>R$ 950</strong>
+
+                                </p>
+
+
+
+                                <a href="hospedagens.html">
+
+                                    Ver hospedagens
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- SUMMERVILLE -->
+
+                        <article class="card-oferta">
+
+                            <img src="images/summerville.jpg"
+
+                                 alt="Summerville All Inclusive Resort"
+
+                                 loading="lazy">
+
+
+
+                            <div class="oferta-conteudo">
+
+                                <span class="oferta-desconto">20% OFF*</span>
+
+
+
+                                <h3>Summerville All Inclusive</h3>
+
+                                <p>Porto de Galinhas, PE</p>
+
+
+
+                                <p class="oferta-preco">
+
+                                    Diárias ilustrativas a partir de
+
+                                    <strong>R$ 1.100</strong>
+
+                                </p>
+
+
+
+                                <a href="hospedagens.html">
+
+                                    Ver hospedagens
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- HOTEL RIEGER -->
+
+                        <article class="card-oferta">
+
+                            <img src="images/hotel-rieger.jpg"
+
+                                 alt="Hotel Rieger em Balneário Camboriú"
+
+                                 loading="lazy">
+
+
+
+                            <div class="oferta-conteudo">
+
+                                <span class="oferta-desconto">18% OFF*</span>
+
+
+
+                                <h3>Hotel Rieger</h3>
+
+                                <p>Balneário Camboriú, SC</p>
+
+
+
+                                <p class="oferta-preco">
+
+                                    Diárias ilustrativas a partir de
+
+                                    <strong>R$ 420</strong>
+
+                                </p>
+
+
+
+                                <a href="hospedagens.html">
+
+                                    Ver hospedagens
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- AVISO SOBRE AS OFERTAS -->
+
+                <p class="promocoes-aviso">
+
+                    * Promoções, descontos e preços ilustrativos
+
+                    para fins acadêmicos. Não representam ofertas
+
+                    reais dos estabelecimentos.
+
+                </p>
+
+
+
+            </div>
+
+        </section>
+
+
+
     </main>
-<script src="js/script.js"></script>
+
+
+
+    <script src="js/script.js"></script>
+
 </body>
+
 </html>
