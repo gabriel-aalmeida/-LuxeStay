@@ -279,3 +279,100 @@ if (carrossel) {
     mostrarSlide(0);
     iniciarAutomatico();
 }
+
+/* ===== DETALHES DA HOSPEDAGEM ===== */
+
+const areaDetalhes = document.getElementById("detalhes-hotel");
+
+if (areaDetalhes) {
+    const parametrosDetalhes = new URLSearchParams(
+        window.location.search
+    );
+
+    const idHotel = Number(parametrosDetalhes.get("id"));
+
+    const hotelSelecionado = hospedagens.find(
+        (hotel) => hotel.id === idHotel
+    );
+
+    if (!hotelSelecionado) {
+        areaDetalhes.innerHTML = `
+            <div class="detalhes-erro">
+                <h1>Hospedagem não encontrada</h1>
+                <p>Não conseguimos localizar o hotel solicitado.</p>
+                <a href="hospedagens.html" class="card-botao">
+                    Ver hospedagens
+                </a>
+            </div>
+        `;
+    } else {
+        const precoFormatado = hotelSelecionado.preco.toLocaleString(
+            "pt-BR",
+            {
+                style: "currency",
+                currency: "BRL"
+            }
+        );
+
+        document.title = `${hotelSelecionado.nome} | LuxeStay`;
+
+        areaDetalhes.innerHTML = `
+            <div class="detalhes-cabecalho">
+                <p class="etiqueta-secao">
+                    ${hotelSelecionado.categoria}
+                </p>
+
+                <h1>${hotelSelecionado.nome}</h1>
+
+                <p>📍 ${hotelSelecionado.localizacao}</p>
+            </div>
+
+            <div class="detalhes-imagem">
+                <img
+                    src="${hotelSelecionado.imagem}"
+                    alt="Imagem ilustrativa da hospedagem"
+                >
+            </div>
+
+            <div class="detalhes-grid">
+                <div class="detalhes-informacoes">
+                    <h2>Sobre esta hospedagem</h2>
+
+                    <p>${hotelSelecionado.descricao}</p>
+
+                    <h3>Comodidades</h3>
+
+                    <div class="card-comodidades">
+                        <span>✓ Wi-Fi</span>
+                        <span>✓ Conforto</span>
+                    </div>
+
+                    <p>
+                        Capacidade cadastrada:
+                        até ${hotelSelecionado.capacidade} hóspedes.
+                    </p>
+                </div>
+
+                <aside class="detalhes-reserva">
+                    <p>Diárias a partir de</p>
+
+                    <p class="detalhes-preco">
+                        ${precoFormatado}
+                        <span>/ noite</span>
+                    </p>
+
+                    <p class="card-aviso">
+                        Valor ilustrativo para fins acadêmicos.
+                    </p>
+
+                    <a
+                        href="reserva.html?id=${hotelSelecionado.id}"
+                        class="card-botao"
+                    >
+                        Reservar agora
+                    </a>
+                </aside>
+            </div>
+        `;
+    }
+}

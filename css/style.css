@@ -857,3 +857,137 @@ body {
         transform: none;
     }
 }
+
+/* ========================================
+   PÁGINA DE DETALHES DA HOSPEDAGEM
+======================================== */
+
+.pagina-detalhes {
+    padding-top: 45px;
+    padding-bottom: 90px;
+}
+
+.voltar-hospedagens {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: var(--azul);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.voltar-hospedagens:hover {
+    text-decoration: underline;
+}
+
+/* Cabeçalho do hotel */
+
+.detalhes-cabecalho {
+    margin-bottom: 28px;
+}
+
+.detalhes-cabecalho h1 {
+    font-size: clamp(28px, 4vw, 42px);
+    margin-bottom: 12px;
+}
+
+.detalhes-cabecalho > p:last-child {
+    color: #555D63;
+}
+
+/* Imagem principal */
+
+.detalhes-imagem {
+    height: 440px;
+    overflow: hidden;
+    border-radius: 18px;
+    margin-bottom: 35px;
+}
+
+.detalhes-imagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Informações e reserva */
+
+.detalhes-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+    gap: 35px;
+    align-items: start;
+}
+
+.detalhes-informacoes {
+    background: #FFFFFF;
+    padding: 32px;
+    border-radius: 14px;
+}
+
+.detalhes-informacoes h2 {
+    margin-bottom: 18px;
+}
+
+.detalhes-informacoes h3 {
+    margin-top: 28px;
+    margin-bottom: 15px;
+}
+
+.detalhes-informacoes > p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Card de reserva */
+
+.detalhes-reserva {
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+}
+
+.detalhes-preco {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 12px 0;
+}
+
+.detalhes-preco span {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Mensagem de erro */
+
+.detalhes-erro {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.detalhes-erro p {
+    margin: 20px 0;
+}
+
+.detalhes-erro .card-botao {
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+    .detalhes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detalhes-imagem {
+        height: 280px;
+    }
+
+    .detalhes-informacoes,
+    .detalhes-reserva {
+        padding: 24px;
+    }
+}
